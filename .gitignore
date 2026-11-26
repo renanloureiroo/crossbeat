@@ -1,0 +1,37 @@
+# macOS
+.DS_Store
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Android / Gradle (wear/, android-bridge/)
+.gradle/
+build/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.keystore
+*.jks
+
+# iOS / Xcode (ios/)
+xcuserdata/
+DerivedData/
+*.xcuserstate
+*.ipa
+*.dSYM.zip
+*.dSYM
+Pods/
+.build/
+
+# Protobuf gerado
+protocol/gen/
+
+# Segredos
+.env
+.env.*
+!.env.example

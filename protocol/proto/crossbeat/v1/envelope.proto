@@ -1,0 +1,70 @@
+// RASCUNHO: ainda pode mudar (ver docs/protocolo.md).
+syntax = "proto3";
+
+package crossbeat.v1;
+
+option java_package = "dev.crossbeat.protocol.v1";
+option swift_prefix = "CB";
+
+message Envelope {
+  uint32 protocol_version = 1;
+  oneof body {
+    Hello hello = 10;
+    HealthBatch health_batch = 20;
+    HealthAck health_ack = 21;
+    FindDevice find_device = 30;
+  }
+}
+
+message Hello {
+  string app_version = 1;
+  repeated uint32 supported_versions = 2;
+  repeated Capability capabilities = 3;
+}
+
+enum Capability {
+  CAPABILITY_UNSPECIFIED = 0;
+  CAPABILITY_HEALTH = 1;
+  CAPABILITY_FIND_DEVICE = 2;
+  CAPABILITY_CAMERA = 3;
+}
+
+message HealthBatch {
+  repeated HealthSample samples = 1;
+}
+
+message HealthSample {
+  string sync_id = 1;       // -> HKMetadataKeySyncIdentifier
+  uint32 sync_version = 2;  // -> HKMetadataKeySyncVersion
+  HealthType type = 3;
+  int64 start_epoch_ms = 4;
+  int64 end_epoch_ms = 5;
+  double value = 6;
+  string unit = 7;
+  Source source = 8;
+}
+
+enum HealthType {
+  HEALTH_TYPE_UNSPECIFIED = 0;
+  HEALTH_TYPE_HEART_RATE = 1;
+  HEALTH_TYPE_STEPS = 2;
+  HEALTH_TYPE_ACTIVE_CALORIES = 3;
+  HEALTH_TYPE_DISTANCE = 4;
+  HEALTH_TYPE_FLOORS = 5;
+  HEALTH_TYPE_SLEEP_STAGE = 6;
+  HEALTH_TYPE_SPO2 = 7;
+}
+
+enum Source {
+  SOURCE_UNSPECIFIED = 0;
+  SOURCE_WATCH_HEALTH_SERVICES = 1;
+  SOURCE_SAMSUNG_HEALTH = 2;
+}
+
+message HealthAck {
+  repeated string sync_ids = 1;
+}
+
+message FindDevice {
+  bool ring = 1;
+}
