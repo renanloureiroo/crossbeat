@@ -56,7 +56,9 @@ crossbeat/
 ├── ios/              App iOS (Swift + SwiftUI): HealthKit e recursos extras
 ├── android-bridge/   App Android (Kotlin): lê o Samsung Health Data SDK
 ├── protocol/         Protocolo do serviço GATT do Crossbeat (protobuf + framing)
-└── docs/             Documentação, ADRs e specs
+├── specs/            Specs de funcionalidades (Spec Kit)
+├── docs/             Documentação e ADRs
+└── .specify/         Configuração do Spec Kit e constituição do projeto
 ```
 
 ## Documentação
@@ -68,13 +70,13 @@ crossbeat/
 - [Ambiente de desenvolvimento](docs/desenvolvimento.md): Android Studio, ADB por Wi-Fi e Xcode
 - [Referências](docs/referencias.md): especificações da Apple, SDKs e projetos estudados
 - [Decisões (ADRs)](docs/adr/)
-- [Specs](docs/specs/): o desenvolvimento é spec-first
+- [Constituição](.specify/memory/constitution.md): princípios do projeto
 
 ## Princípios
 
 - **Só apps do Crossbeat** rodam no relógio e nos celulares. Merge, LibreWear e WearBridge servem apenas de referência de estudo.
 - **Sem servidor.** O relógio é o hub entre Android e iPhone.
-- **Spec-first.** Toda funcionalidade começa por uma spec em `docs/specs/`.
+- **Spec-first.** Toda funcionalidade começa por uma spec, com o [Spec Kit](https://github.com/github/spec-kit).
 - **Riscos primeiro.** Hipóteses técnicas arriscadas são validadas em protótipos descartáveis antes de virar produto.
 
 ## Licença

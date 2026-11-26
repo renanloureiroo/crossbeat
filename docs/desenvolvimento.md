@@ -52,4 +52,22 @@ adb logcat -s Crossbeat:* BluetoothGatt:* BtGatt.GattService:*
 
 ## Fluxo de trabalho
 
-O desenvolvimento é **spec-first**: toda funcionalidade começa por uma spec em [`docs/specs/`](specs/). Decisões de arquitetura viram uma [ADR](adr/).
+O desenvolvimento é **spec-first**, com o [Spec Kit](https://github.com/github/spec-kit). Os princípios do projeto estão na [constituição](../.specify/memory/constitution.md).
+
+```bash
+# Instalar a CLI (uma vez)
+uv tool install specify-cli
+```
+
+No Claude Code, dentro do repositório:
+
+| Skill | Pra quê |
+|---|---|
+| `/speckit-specify` | Cria `specs/NNN-nome/spec.md` a partir da descrição da funcionalidade |
+| `/speckit-clarify` | (opcional) Perguntas para tirar ambiguidades antes do plano |
+| `/speckit-plan` | Plano técnico (`plan.md`, modelo de dados, contratos) |
+| `/speckit-tasks` | Quebra o plano em `tasks.md` |
+| `/speckit-analyze` | (opcional) Consistência entre spec, plano e tarefas |
+| `/speckit-implement` | Executa as tarefas |
+
+Decisões de arquitetura viram uma [ADR](adr/).

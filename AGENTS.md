@@ -8,7 +8,7 @@ Crossbeat: app para usar o Galaxy Watch 8 (Wear OS 6) com iPhone e Android ao me
 
 ## Regras
 
-- **Spec-first:** não implemente funcionalidade sem uma spec em `docs/specs/`. Se ela não existir, proponha a spec antes.
+- **Spec-first (Spec Kit):** não implemente funcionalidade sem spec em `specs/NNN-nome/`. Use `/speckit-specify` → `/speckit-plan` → `/speckit-tasks` → `/speckit-implement`. Siga a [constituição](.specify/memory/constitution.md).
 - **Decisões de arquitetura** viram uma ADR em `docs/adr/`.
 - **Protocolo:** qualquer mudança em `protocol/` atualiza `docs/protocolo.md` e as duas implementações (`wear/` e `ios/`) no mesmo PR.
 - **Sem servidor e sem telemetria.** Dados de saúde não saem dos dispositivos do usuário.

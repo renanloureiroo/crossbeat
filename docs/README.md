@@ -9,7 +9,7 @@
 | [Ambiente de desenvolvimento](desenvolvimento.md) | Android Studio, ADB por Wi-Fi e Xcode |
 | [Referências](referencias.md) | Especificações e projetos estudados |
 | [ADRs](adr/) | Decisões de arquitetura |
-| [Specs](specs/) | Specs de funcionalidades (spec-first) |
+| [Constituição](../.specify/memory/constitution.md) | Princípios do projeto (Spec Kit) |
 
 ## ADRs
 

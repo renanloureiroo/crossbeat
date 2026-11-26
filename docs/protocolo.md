@@ -1,6 +1,6 @@
 # Protocolo do serviço GATT do Crossbeat
 
-> **Status: rascunho.** Será fechado antes da primeira linha do app iOS. Qualquer mudança passa por uma spec em `docs/specs/`.
+> **Status: rascunho.** Será fechado antes da primeira linha do app iOS. Qualquer mudança passa por uma spec (Spec Kit).
 
 ## Serviços usados
 
